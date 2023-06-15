@@ -1,0 +1,3 @@
+exec bspwm &&
+sxhkd
+

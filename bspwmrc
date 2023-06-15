@@ -1,0 +1,62 @@
+#! /bin/sh
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+##sxhkd &
+##xrandr -s 1366x768 &
+$HOME/.config/polybar/launch.sh & 
+pgrep -x picom > /dev/null || picom --config $HOME/.config/picom/picom.conf  &
+##compton --restore &
+# polybar example &
+# tint2 &
+setxkbmap -layout latam &
+nitrogen --restore &
+# feh --bg-fill /home/benjamin/Descargas/xico/x.png
+
+
+bspc monitor -d 1 2 3 4
+# bspc monitor MONITOR_SECUNDARIO -d VII VIII
+
+bspc config border_width         0
+bspc config window_gap           2 
+ot desktop='^2'
+
+bspc config split_ratio          0.57
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc rule -a Vivaldi-snapshot  floating=on
+bspc rule -a Vivaldi-snapshot	state=floating rectangle=768x432+598+328
+
+#bspc rule -a firefox  	floating=on
+#bspc rule -a firefox	state=floating rectangle=768x432+598+328
+
+#bspc rule -a Vivaldi-snapshot	state=floating rectangle=800x450+566+310
+
+# bspc rule -a Vivaldi-snapshot	state=floating rectangle=668x432+700+328
+# bspc rule -a Vivaldi-snapshot	state=floating rectangle=668x432+800+0
+bscp rule -a code-oss 		state=tiled
+
+#bspc layout custom 1x2:/tmp/bspc-custom-layout
+
+#bspc config custom_layout_1x2_split vertical
+#bspc config custom_layout_1x2_ratio 0.666
+#bspc config custom_layout_1x2_left 0
+#bspc config custom_layout_1x2_right 1
+
+# bspc config custom_layout_1x2_key Super + Shift + 2
+
+
+
+# bspc rule -a Gimp desktop='^8' state=floating follow=on
+# obspc rule -a crx_pjibgclleladliembfgfagdaldikeohf desktop='^4'
+# bspc rule -a Spotify desktop='^4'
+
+# bspc rule -a Vivaldi-snapshot desktop='^1'
+bspc rule -a Code desktop='^2'
+bspc rule -a vivaldi-snapshot desktop='^2'
+bspc rule -a Brave-browser desktop='^3'
+bspc rule -a Spotify desktop='^3'
+bspc rule -a Opera desktop='^2'
+bspc rule -a mplayer state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off

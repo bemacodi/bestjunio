@@ -1,0 +1,3 @@
+[greeter]
+background=/usr/share/themes/walls/29.jpg
+default-user-image=/var/lib/AccountsService/icons/benjamin.jpg
